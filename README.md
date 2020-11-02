@@ -1,0 +1,1 @@
+![image](election.png)
