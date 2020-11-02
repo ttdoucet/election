@@ -86,7 +86,6 @@ races[] =
     "Alabama",          9,  0.016575,
 };
 
-
 /* Sample the distribution uniformly distributed
  * between zero and one.
  */
@@ -139,7 +138,9 @@ int main(int argc, char *argv[])
     // Fun with lambdas.
     auto pct = [](int num, int denom) { return 100.0 * num / denom; };
     auto rpt = [=](string party, int wins) {
-                   cout << party << ": " << setw(8) << wins << "    " << pct(wins, elections) << "%\n";
+                   cout << party << ": " << setw(8) << wins << "    "
+                        << fixed << setw(8) << setprecision(4)
+                        << pct(wins, elections) << "%\n";
                };
 
     rpt("Dem", dem);
